@@ -21,9 +21,8 @@ class Questions:
         self.area3 = Areas('area3')
         self.area4 = Areas('area4')
 
-    @classmethod
     def genericas(self):
-        pergunta_1 = input('A, B, C, D').capitalize().strip()
+        pergunta_1 = input('A, B, C, D\n').capitalize().strip()
         if pergunta_1 == 'A':
             self.area1.recebe(1)
         elif pergunta_1 == 'B':
@@ -32,13 +31,14 @@ class Questions:
             self.area3.recebe(1)
         elif pergunta_1 == 'D':
             self.area4.recebe(1)
-        
-    @classmethod
+        else:
+            return 'Opção inválida'
+
     def exportar_resultados(self):
         resultados = {'nome':self.name, 
                       'area1':self.area1.quantidade(), 
                       'area2':self.area2.quantidade(),
-                      'area3':self.area2.quantidade(),
-                      'area4':self.area2.quantidade()}
-        
+                      'area3':self.area3.quantidade(),
+                      'area4':self.area4.quantidade()}
+
         return pd.DataFrame(resultados).to_csv('data/dados.csv',index=False)
