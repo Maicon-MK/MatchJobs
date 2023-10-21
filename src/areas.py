@@ -3,9 +3,9 @@ class Areas:
         self.name = name
         self.area = {self.name:0}
 
-    def quantidade(self) -> str:
+    def quantity(self) -> str:
         return self.area[self.name]
 
-    def recebe(self, quantidade):
-        self.area[self.name] += quantidade
+    def receives(self, quantity):
+        self.area[self.name] += quantity
 
