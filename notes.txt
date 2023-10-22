@@ -1,0 +1,9 @@
+Pendências:
+Colocar as perguntas em cima da base
+Fazer a interface gráfica
+Calculo de afinidade com cada área por porcentagem
+Conectar ao banco de dados (talvez)
+
+Seria interessante um sistema de login onde o usuário entra e ao consultar o banco de dados ele só terá 
+acesso aos seus únicos dados. E porque não colocar um resumo como um curriculo? Montar um perfil como
+numa rede social.
