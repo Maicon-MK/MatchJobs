@@ -1,29 +1,21 @@
 from src.areas import Areas
 from src.questions import Questions
 import pandas as pd
-
-"""
-instanciar objetos correspondentes as areas
-coletar os \" pontos \" dessas areas e exportar para um csv junto do nome do usuario
-com o csv podemos fazer os inserts de um modo simples no banco de dados
-TALVEZ fosse interessante, dependendo da pontuação inicial de alguma(s) area(s) nas primeiras perguntas 
-genericas criar metodos exclusivos com perguntas para cada area
-seria interessante criar uma variavel que recebe o a alternativa escolhida, asssim definindo
-qual seria a proxima pergunta com base na resposta da anterior
-calculo de porcentagem feito durante esta classe ou depois analisando o conteudo do banco de dados?
-"""
+from os import system, path
+from time import sleep
 
 class Interview:
     def __init__(self, name):
         self.name = name
         self.questions = Questions()
-        self.area1 = Areas('area1')
-        self.area2 = Areas('area2')
-        self.area3 = Areas('area3')
-        self.area4 = Areas('area4')
+        self.area1 = Areas('Análise de Dados')
+        self.area2 = Areas('Backend')
+        self.area3 = Areas('Frontend')
+        self.area4 = Areas('Produto')
 
     def interview(self):
         answer1 = self.questions.first_question()
+        system('cls')
         if answer1 == 'A':
             self.area1.receives(1)
         elif answer1 == 'B':
@@ -34,6 +26,7 @@ class Interview:
             self.area4.receives(1)
 
         answer2 = self.questions.second_question()
+        system('cls')
         if answer2 == 'A':
             self.area1.receives(1)
         elif answer2 == 'B':
@@ -44,6 +37,7 @@ class Interview:
             self.area4.receives(1)
 
         answer3 = self.questions.third_question()
+        system('cls')
         if answer3 == 'A':
             self.area1.receives(1)
         elif answer3 == 'B':
@@ -54,6 +48,7 @@ class Interview:
             self.area4.receives(1)
 
         answer4 = self.questions.fourth_question()
+        system('cls')
         if answer4 == 'A':
             self.area1.receives(1)
         elif answer4 == 'B':
@@ -63,12 +58,14 @@ class Interview:
         elif answer4 == 'D':
             self.area4.receives(1)
 
-        resultados = {'nome': [self.name], 
-                    'area1': [self.area1.quantity()], 
-                    'area2': [self.area2.quantity()],
-                    'area3': [self.area3.quantity()],
-                    'area4': [self.area4.quantity()]}
+        results = {'Nome': [self.name], 
+                    'Análise de Dados': [self.area1.quantity()], 
+                    'Frontend': [self.area2.quantity()],
+                    'Backend': [self.area3.quantity()],
+                    'Produto': [self.area4.quantity()]}
+        
+        return results
 
-        return pd.DataFrame(resultados).to_csv('data/dados.csv', index=False)
+
 
 
