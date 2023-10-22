@@ -6,6 +6,7 @@ class Areas:
     def quantity(self) -> str:
         return self.area[self.name]
 
-    def receives(self, quantity):
+    def receives(self, quantity) -> int:
         self.area[self.name] += quantity
+        return self.area[self.name]
 

@@ -63,13 +63,12 @@ class Interview:
         elif answer4 == 'D':
             self.area4.receives(1)
 
+        resultados = {'nome': [self.name], 
+                    'area1': [self.area1.quantity()], 
+                    'area2': [self.area2.quantity()],
+                    'area3': [self.area3.quantity()],
+                    'area4': [self.area4.quantity()]}
 
-    def exportar_resultados(self):
-        resultados = {'nome':self.name, 
-                      'area1':self.area1.quantity(), 
-                      'area2':self.area2.quantity(),
-                      'area3':self.area3.quantity(),
-                      'area4':self.area4.quantity()}
+        return pd.DataFrame(resultados).to_csv('data/dados.csv', index=False)
 
-        return pd.DataFrame(resultados).to_csv('data/dados.csv',index=False)
 
