@@ -14,8 +14,8 @@ class Interview:
         self.area4 = Areas('Produto')
 
     def interview(self):
-        answer1 = self.questions.first_question()
         system('cls')
+        answer1 = self.questions.question(0)
         if answer1 == 'A':
             self.area1.receives(1)
         elif answer1 == 'B':
@@ -25,8 +25,8 @@ class Interview:
         elif answer1 == 'D':
             self.area4.receives(1)
 
-        answer2 = self.questions.second_question()
         system('cls')
+        answer2 = self.questions.question(1)
         if answer2 == 'A':
             self.area1.receives(1)
         elif answer2 == 'B':
@@ -36,8 +36,8 @@ class Interview:
         elif answer2 == 'D':
             self.area4.receives(1)
 
-        answer3 = self.questions.third_question()
         system('cls')
+        answer3 = self.questions.question(2)
         if answer3 == 'A':
             self.area1.receives(1)
         elif answer3 == 'B':
@@ -47,8 +47,8 @@ class Interview:
         elif answer3 == 'D':
             self.area4.receives(1)
 
-        answer4 = self.questions.fourth_question()
         system('cls')
+        answer4 = self.questions.question(3)
         if answer4 == 'A':
             self.area1.receives(1)
         elif answer4 == 'B':
@@ -57,6 +57,7 @@ class Interview:
             self.area3.receives(1)
         elif answer4 == 'D':
             self.area4.receives(1)
+        system('cls')
 
         results = {'Nome': [self.name], 
                     'Análise de Dados': [self.area1.quantity()], 
