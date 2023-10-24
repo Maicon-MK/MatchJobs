@@ -1,6 +1,5 @@
 Pendências:
 Colocar as perguntas em cima da base
-Como fazer para ter várias perguntas sem códigos imensos?
 Fazer a interface gráfica
 Calculo de afinidade com cada área por porcentagem
 Conectar ao banco de dados (talvez)
