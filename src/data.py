@@ -1,6 +1,5 @@
 import pandas as pd
 from os import path
-from src.interview import Interview
 
 class Data:
     def export(self, results):
