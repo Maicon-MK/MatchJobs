@@ -2,7 +2,7 @@
 
 MatchJobs é uma ferramenta desenvolvida para facilitar os profissionais da área de tecnologia a encontrar a vaga que mais combina com eles.
 
-##Sobre o código
+## Sobre o código
 
 O código do projeto projeto foi criado com a intenção de ser facilmente reaproveitado e editado, permitindo a inserção de mais áreas, perguntas e respostas.
 
