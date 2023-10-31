@@ -1,8 +1,11 @@
 class Questions:
     def __init__(self):
         self.valid_options = ['A', 'B', 'C', 'D']
-        self.intense_options = ['Nenhuma','Pouco','Bastante','Demais']
-        self.questions = ['Pergunta 1','Pergunta 2','Pergunta 3','Pergunta 4']
+        self.intense_options = ['Demais','Sim','Um pouco','Não']
+        self.questions = ['1. Você se considera uma pessoa preditiva?',
+                          '2. Você se considera uma pessoa com alto pensamento critico?',
+                          '3. Você se considera uma pessoa criativa?',
+                          '4. Você se considera uma pessoa comunicativa?']
 
     def get_answer(self):
         answer = input().capitalize().strip()
